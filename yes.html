@@ -52,7 +52,7 @@
     ></script>
     <script type="text/javascript">
       (function () {
-        emailjs.init(""); // Replace with your actual public key
+        emailjs.init("HVzwriv4xJWjn8FAx"); // Replace with your actual public key
       })();
     </script>
     <script type="text/javascript">
@@ -62,7 +62,7 @@
           .addEventListener("submit", function (event) {
             event.preventDefault();
 
-            emailjs.sendForm("", "", this).then(
+            emailjs.sendForm("service_gmbvhna", "template_lzmsjtf", this).then(
               () => {
                 alert("Thank you for contacting me!");
                 // Optionally, redirect or clear the form here
@@ -79,12 +79,10 @@
   </head>
   <body>
     <div class="container">
-      <div>
+      <div class="gif_container">
         <h1 class="header_text">
           Your contact info is safe with me, Pookie 😊
         </h1>
-      </div>
-      <div class="gif_container">
         <img
           src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif"
           alt="Cute animated illustration"
