@@ -1,4 +1,4 @@
-body {
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,4 +20,77 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(189, 225, 122);
+  margin: 0;
+}
+
+.header_text {
+  font-family: "Nunito", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.gif_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit_btn {
+  background-color: #ffffff;
+  color: rgb(233, 48, 48);
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit_btn:hover {
+  background-color: #f0f0f0;
+}
+
+.submit_btn:focus {
+  outline: none;
 }

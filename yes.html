@@ -1,18 +1,112 @@
+<!-- 
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./yes_style.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Hurrayyyy!!</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
-            </div>
-        </div>
-       
-    </body> 
+  <head>
+    <link rel="stylesheet" href="./yes_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div class="gif_container">
+        <h1 class="header_text">
+          Your contact info is safe with me, Pookie 😊
+        </h1>
+        <img
+          src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="form_container">
+        <form
+          id="contactForm"
+          action="https://example.com/send-email"
+          method="POST"
+        >
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="number">Contact:</label>
+          <input type="tel" id="number" name="number" required />
+
+          <label for="flowers">Would you like flowers?</label>
+          <select id="flowers" name="flowers">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <button type="submit" class="submit_btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./yes_style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("HVzwriv4xJWjn8FAx"); // Replace with your actual public key
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_gmbvhna", "template_lzmsjtf", this).then(
+              () => {
+                alert("Thank you for contacting me!");
+                // Optionally, redirect or clear the form here
+                document.getElementById("contactForm").reset(); // Reset the form after submission
+              },
+              (error) => {
+                alert("Failed to send message. Please try again.");
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">
+          Your contact info is safe with me, Pookie 😊
+        </h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="form_container">
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="number">Contact:</label>
+          <input type="tel" id="number" name="number" required />
+
+          <label for="flowers">Would you like flowers?</label>
+          <select id="flowers" name="flowers">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <button type="submit" class="submit_btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
